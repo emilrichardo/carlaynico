@@ -18,19 +18,27 @@ export default function Invitaction({nombres,personal}) {
 
   const [confirmar, setConfirmar] = useState(true)
 
+  const textConfirmar = personal >= 2 ? "Confirmamos" : "Confirmo";
+
 
   return (
     <div className="max-w-xl mx-auto px-4 md:px-12">
       <Head>
         <title>Carla y Nico</title>
       </Head>
-      <Image
-          src="/hojas01.png"
-          alt="Hoja 01"
-          width={395}
-          height={350}
-        />
-      <section className="h-screen  flex flex-col justify-center">
+
+
+
+      <section className="h-screen relative  flex flex-col justify-center">
+                    <div className="absolute -right-60 -top-24">
+                    <Image
+                        src="/hojas01.png"
+                        alt="Hoja 01"
+                        width={395}
+                        height={350}
+                        />
+
+                    </div>
 
 
         <div className="text-center ">
@@ -60,7 +68,7 @@ export default function Invitaction({nombres,personal}) {
         <div className="text-center">
           <h4 className=" text-2xl font-normal">{nombres}</h4>
           <h5>* Personal ({personal})</h5>
-          <p>Queremos que seas parte de este momento tan importante.</p>
+          <p>Queremos que {personal >= 2 ? "sean" : "seas"} parte de este momento tan importante.</p>
           <div className="text-center">
             <svg className=" mt-8 inline-block" width="49" height="54" viewBox="0 0 49 54" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M43.5556 5.4H38.1111V0H32.6667V5.4H16.3333V0H10.8889V5.4H5.44444C2.44183 5.4 0 7.8219 0 10.8V48.6C0 51.5781 2.44183 54 5.44444 54H43.5556C46.5582 54 49 51.5781 49 48.6V10.8C49 7.8219 46.5582 5.4 43.5556 5.4ZM33.6249 37.0197L24.5054 45.9L15.3887 37.0197C14.8264 36.4834 14.3791 35.8399 14.0736 35.128C13.768 34.4161 13.6105 33.6503 13.6105 32.8766C13.6105 32.1028 13.768 31.337 14.0736 30.6251C14.3791 29.9132 14.8264 29.2697 15.3887 28.7334C16.5218 27.6239 18.0499 27.0017 19.6422 27.0017C21.2344 27.0017 22.7626 27.6239 23.8957 28.7334L24.5054 29.3247L25.1152 28.7334C26.2488 27.6237 27.7774 27.0015 29.3701 27.0015C30.9627 27.0015 32.4914 27.6237 33.6249 28.7334C34.1872 29.2697 34.6345 29.9132 34.94 30.6251C35.2456 31.337 35.4031 32.1028 35.4031 32.8766C35.4031 33.6503 35.2456 34.4161 34.94 35.128C34.6345 35.8399 34.1872 36.4834 33.6249 37.0197ZM43.5556 18.9H5.44444V13.5H43.5556V18.9Z" fill="url(#paint0_linear_34_10160)"/>
@@ -190,7 +198,7 @@ export default function Invitaction({nombres,personal}) {
           {modal &&
             <div   className="h-screen w-screen bg-opacity-50 bg-dark fixed top-0 left-0 z-0 flex items-center">
 
-            <div className="m-4 mx-4 rounded relative bg-white w-full py-8 px-4 z-10">
+            <div className="m-4 max-w-2xl  mx-auto rounded relative bg-white w-full py-8 px-4 z-10">
             <button onClick={() => setModal(false)} className="absolute right-0 top-0 p-2 bg-dark text-light">Cerrar</button>
               <h3 className="text-lg font-medium mb-8">Copiar CBU o Alias</h3>
                 <h4 className=" font-medium">CBU</h4>
@@ -227,7 +235,7 @@ export default function Invitaction({nombres,personal}) {
             <div className="form-check py-2 px-4 rounded-full bg-white w-full">
               <input onClick={()=> setConfirmar(true)} className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-primary checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  defaultChecked/>
               <label className="form-check-label inline-block text-gray-800" htmlFor="flexRadioDefault1">
-               Si! Confirmo
+               Si! {textConfirmar}
               </label>
             </div>
             <div className="form-check py-2 px-4 rounded-full bg-white w-full mt-4">

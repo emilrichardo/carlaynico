@@ -4,10 +4,15 @@ export default function handler(req, res) {
   res.status(200).json(
     [
       {
-       "id": 1,
-       "nombres": "Anglade Manuel",
-       "personal": 1
+       "id": 0,
+       "nombres": "Invitado especial",
+       "personal": 0
       },
+      {
+        "id": 1,
+        "nombres": "Anglade Manuel",
+        "personal": 1
+       },
       {
        "id": 2,
        "nombres": "Cecilia - Daniel y Lorenzo ",
