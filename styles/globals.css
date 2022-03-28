@@ -11,7 +11,7 @@
 @layer base {
   html {
 
-    @apply scroll-smooth font-sans bg-light text-dark  font-light overflow-x-hidden w-screen;
+    @apply scroll-smooth font-sans bg-dark bg-opacity-20 text-dark  font-light overflow-x-hidden w-screen;
   }
   body{
     @apply overflow-x-hidden;
