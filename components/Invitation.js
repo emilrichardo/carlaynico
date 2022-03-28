@@ -58,7 +58,7 @@ export default function Invitaction({nombres,personal}) {
           <h4 className="text-2xl italic font-normal">&quot;Si yo, tu... Si tú, yo. <br/>Sin ti nada... &quot;</h4>
           <ReactAudioPlayer
           className="mx-auto my-4"
-              src="siyotu.mp3"
+              src="../../siyotu.mp3"
               autoPlay={true}
               controls
             />
