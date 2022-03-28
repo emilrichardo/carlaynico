@@ -2,6 +2,8 @@ import Head from "next/head";
 import Logo from "../components/Logo";
 import ReactAudioPlayer from 'react-audio-player';
 import Image from "next/image";
+import Button from "../components/Button";
+import Count from "../components/Count"
 
 
 
@@ -11,16 +13,14 @@ export default function Home() {
       <Head>
         <title>Carla y Nico</title>
       </Head>
-      <div className="h-screen  flex flex-col justify-center">
-       {/*  <div className=" relative -top-24 -right-1/2 ">
-        <Image
+      <Image
           src="/hojas01.png"
           alt="Hoja 01"
           width={395}
           height={350}
         />
+      <section className="h-screen  flex flex-col justify-center">
 
-        </div> */}
 
         <div className="text-center ">
           <h4 className=" tracking-widest">¡Nos casamos!</h4>
@@ -43,7 +43,38 @@ export default function Home() {
 
         </div>
 
-      </div>
+      </section>
+
+      <section className=" min-h-screen">
+        <div className="text-center">
+          <h4 className=" text-2xl font-normal">Romina y Emil</h4>
+          <h5>* Personal (2)</h5>
+          <p>Queremos que seas parte de este momento tan importante.</p>
+          <div className="text-center">
+            <svg className=" mt-8 inline-block" width="49" height="54" viewBox="0 0 49 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M43.5556 5.4H38.1111V0H32.6667V5.4H16.3333V0H10.8889V5.4H5.44444C2.44183 5.4 0 7.8219 0 10.8V48.6C0 51.5781 2.44183 54 5.44444 54H43.5556C46.5582 54 49 51.5781 49 48.6V10.8C49 7.8219 46.5582 5.4 43.5556 5.4ZM33.6249 37.0197L24.5054 45.9L15.3887 37.0197C14.8264 36.4834 14.3791 35.8399 14.0736 35.128C13.768 34.4161 13.6105 33.6503 13.6105 32.8766C13.6105 32.1028 13.768 31.337 14.0736 30.6251C14.3791 29.9132 14.8264 29.2697 15.3887 28.7334C16.5218 27.6239 18.0499 27.0017 19.6422 27.0017C21.2344 27.0017 22.7626 27.6239 23.8957 28.7334L24.5054 29.3247L25.1152 28.7334C26.2488 27.6237 27.7774 27.0015 29.3701 27.0015C30.9627 27.0015 32.4914 27.6237 33.6249 28.7334C34.1872 29.2697 34.6345 29.9132 34.94 30.6251C35.2456 31.337 35.4031 32.1028 35.4031 32.8766C35.4031 33.6503 35.2456 34.4161 34.94 35.128C34.6345 35.8399 34.1872 36.4834 33.6249 37.0197ZM43.5556 18.9H5.44444V13.5H43.5556V18.9Z" fill="url(#paint0_linear_34_10160)"/>
+              <defs>
+              <linearGradient id="paint0_linear_34_10160" x1="-5.27512" y1="-24.7091" x2="45.6905" y2="65.3404" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#D5AC8D"/>
+              <stop offset="0.5" stopColor="#E8C892"/>
+              <stop offset="1" stopColor="#D5AC8D"/>
+              </linearGradient>
+              </defs>
+            </svg>
+
+            <h5 className=" mt-8 text-2xl font-medium mb-8">30 de abril - 21hs</h5>
+            <Button className="w-full bg-white mb-4">Confirmar presencia</Button>
+            <Button className="w-full">Agendar</Button>
+
+          </div>
+
+          <div className="mt-8">
+            <h4 className=" font-medium">Falta</h4>
+          <Count/>
+          </div>
+
+        </div>
+      </section>
 
 
 
