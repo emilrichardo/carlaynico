@@ -267,11 +267,6 @@ export default function handler(req, res) {
        "id": 53,
        "nombres": "Santiago Coroleu y Silvina Barcudi",
        "personal": 2
-      },
-      {
-       "id": null,
-       "nombres": "total",
-       "personal": 100
       }
      ]
   )
