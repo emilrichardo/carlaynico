@@ -252,7 +252,7 @@ export default function Invitaction({nombres,personal}) {
             <div className="form-check py-2 px-4 rounded-full bg-white w-full mt-4">
               <input  onClick={()=> setConfirmar(false)} className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-primary checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
               <label className="form-check-label inline-block text-gray-800" htmlFor="flexRadioDefault2">
-                No puedo
+                { personal >= 2 ? "No podemos": "No puedo"}
               </label>
             </div>
           </div>
