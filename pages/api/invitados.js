@@ -210,7 +210,7 @@ export default function handler(req, res) {
       },
       {
        "id": 41,
-       "nombres": "Fatima ",
+       "nombres": "Fatima Olivera",
        "personal": 1
       },
       {
@@ -250,7 +250,7 @@ export default function handler(req, res) {
       },
       {
        "id": 49,
-       "nombres": "Tiara ",
+       "nombres": "Tiara Coronel",
        "personal": 1
       },
       {
