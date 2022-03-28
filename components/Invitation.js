@@ -100,7 +100,6 @@ export default function Invitaction({nombres,personal}) {
           </div>
 
           <div className="mt-8">
-            <h4 className=" font-medium">Faltan</h4>
           <Count/>
           </div>
 
@@ -287,7 +286,12 @@ export default function Invitaction({nombres,personal}) {
         </svg>
         <h3 className=" font-normal text-2xl mb-4">Compartimos este día Juntos</h3>
         <p>Compartí tus fotos y vídeos de ese hermoso día en #CarlayNico @nanglade @carlasuarez441</p>
+        <a className="block mt-8" target="_blank" rel="noreferrer" href="https://photos.app.goo.gl/pQcP6X6RCqAco8x48">
+            <Button>Compartir fotos en album</Button>
+          </a>
         <div>
+
+
 
             <Logo className=" w-24" />
 
