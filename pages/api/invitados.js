@@ -5,7 +5,7 @@ export default function handler(req, res) {
     [
       {
        "id": 0,
-       "nombres": "Invitado especial",
+       "nombres": "Invitado 0",
        "personal": 0
       },
       {
