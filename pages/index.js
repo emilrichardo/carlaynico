@@ -8,12 +8,20 @@ import Button from "../components/Button";
 import Count from "../components/Count"
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
+const Persona = {
+  'id' : '01',
+  'nombres': 'Romina y Emil',
+  'personal': 2
+}
+
 
 export default function Home() {
 
   const [modal,setModal] = useState(false);
   const [copy, setCopy] = useState(false)
   const [copyAlias, setCopyAlias] = useState(false)
+
+  const [confirmar, setConfirmar] = useState(true)
 
 
   return (
@@ -55,8 +63,8 @@ export default function Home() {
 
       <section className="">
         <div className="text-center">
-          <h4 className=" text-2xl font-normal">Romina y Emil</h4>
-          <h5>* Personal (2)</h5>
+          <h4 className=" text-2xl font-normal">{Persona.nombres}</h4>
+          <h5>* Personal ({Persona.personal})</h5>
           <p>Queremos que seas parte de este momento tan importante.</p>
           <div className="text-center">
             <svg className=" mt-8 inline-block" width="49" height="54" viewBox="0 0 49 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,13 +79,14 @@ export default function Home() {
             </svg>
 
             <h5 className=" mt-8 text-2xl font-medium mb-8">30 de abril - 21hs</h5>
-            <Button className="w-full bg-white mb-4">Confirmar presencia</Button>
+            <a href="#confirmarpresencia"><Button className="w-full bg-white mb-4">Confirmar presencia</Button></a>
+
             <Button className="w-full">Agendar</Button>
 
           </div>
 
           <div className="mt-8">
-            <h4 className=" font-medium">Faltam</h4>
+            <h4 className=" font-medium">Faltan</h4>
           <Count/>
           </div>
 
@@ -212,6 +221,66 @@ export default function Home() {
 
         </div>
 
+
+      </section>
+
+      <section className="text-center py-[20vh]" id="confirmarpresencia">
+        <h3 className="text-3xl font-normal">Confirmar<br/>tu presencia</h3>
+        <h4 className="text-xl font-medium mt-12">{Persona.nombres} <br/> ¿{Persona.personal >= 2 ? "Asistirán" : "Asistirás"} a la fiesta?</h4>
+        <div className="flex flex-col text-left font-medium text-xl my-4 px-8">
+          <div>
+            <div className="form-check py-2 px-4 rounded-full bg-white w-full">
+              <input onClick={()=> setConfirmar(true)} className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-primary checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  defaultChecked/>
+              <label className="form-check-label inline-block text-gray-800" htmlFor="flexRadioDefault1">
+               Si! Confirmo
+              </label>
+            </div>
+            <div className="form-check py-2 px-4 rounded-full bg-white w-full mt-4">
+              <input  onClick={()=> setConfirmar(false)} className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-primary checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+              <label className="form-check-label inline-block text-gray-800" htmlFor="flexRadioDefault2">
+                No puedo
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <a target="_blank" rel="noreferrer"  href={`https://wa.me/+543854931915?text=${Persona.nombres + " (Invitaciones:" + Persona.personal + ") "}${confirmar ? " - Confirma su asistencia la fiesta." : "No  podrá asistir a la fiesta."}`}>
+        <Button className="mt-2">Enviar respuesta</Button>
+        </a>
+
+        <p className="mt-8">Confirmar hasta el 15 de abril.</p>
+
+
+      </section>
+
+      <section className="py-[20vh]">
+        <div className="text-center">
+        <svg className=" inline-block" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M51.7742 20.5271C51.7493 18.6551 51.3989 16.8018 50.7386 15.0499C50.166 13.5722 49.2915 12.2302 48.171 11.1096C47.0504 9.98904 45.7084 9.11453 44.2307 8.54197C42.5013 7.8928 40.6744 7.54178 38.8276 7.50386C36.4498 7.39758 35.696 7.36792 29.6601 7.36792C23.6243 7.36792 22.8506 7.36792 20.4902 7.50386C18.6442 7.54206 16.8181 7.89307 15.0896 8.54197C13.6117 9.11414 12.2694 9.9885 11.1488 11.1091C10.0282 12.2298 9.15381 13.572 8.58164 15.0499C7.93117 16.7779 7.58091 18.6044 7.54601 20.4505C7.43972 22.8307 7.40759 23.5846 7.40759 29.6205C7.40759 35.6563 7.40759 36.4275 7.54601 38.7904C7.58308 40.6392 7.93159 42.4633 8.58164 44.1959C9.15477 45.6734 10.0298 47.0151 11.1508 48.1352C12.2718 49.2554 13.6141 50.1294 15.092 50.7014C16.8159 51.3767 18.6423 51.7528 20.4927 51.8137C22.8729 51.9199 23.6268 51.9521 29.6626 51.9521C35.6984 51.9521 36.4721 51.9521 38.8325 51.8137C40.6793 51.7773 42.5063 51.4271 44.2356 50.778C45.7129 50.2048 47.0546 49.3301 48.1751 48.2096C49.2956 47.0891 50.1703 45.7474 50.7436 44.2701C51.3936 42.5399 51.7421 40.7158 51.7792 38.8645C51.8855 36.4868 51.9176 35.7329 51.9176 29.6946C51.9127 23.6588 51.9127 22.8925 51.7742 20.5271ZM29.6453 41.0347C23.3326 41.0347 18.2187 35.9208 18.2187 29.6081C18.2187 23.2954 23.3326 18.1815 29.6453 18.1815C32.6758 18.1815 35.5822 19.3854 37.7251 21.5283C39.868 23.6712 41.0719 26.5776 41.0719 29.6081C41.0719 32.6386 39.868 35.545 37.7251 37.6879C35.5822 39.8308 32.6758 41.0347 29.6453 41.0347ZM41.5267 20.4233C41.1767 20.4237 40.83 20.355 40.5066 20.2212C40.1832 20.0874 39.8894 19.8911 39.6419 19.6437C39.3944 19.3962 39.1981 19.1023 39.0643 18.7789C38.9306 18.4555 38.8619 18.1089 38.8622 17.7589C38.8622 17.4091 38.9311 17.0628 39.0649 16.7397C39.1988 16.4166 39.3949 16.123 39.6422 15.8757C39.8895 15.6284 40.1831 15.4322 40.5062 15.2984C40.8294 15.1645 41.1757 15.0956 41.5254 15.0956C41.8752 15.0956 42.2215 15.1645 42.5446 15.2984C42.8677 15.4322 43.1613 15.6284 43.4086 15.8757C43.6559 16.123 43.8521 16.4166 43.9859 16.7397C44.1198 17.0628 44.1887 17.4091 44.1887 17.7589C44.1887 19.232 42.9973 20.4233 41.5267 20.4233Z" fill="url(#paint0_linear_69_78)"/>
+        <path d="M29.6454 37.0309C33.7447 37.0309 37.0678 33.7078 37.0678 29.6085C37.0678 25.5092 33.7447 22.186 29.6454 22.186C25.546 22.186 22.2229 25.5092 22.2229 29.6085C22.2229 33.7078 25.546 37.0309 29.6454 37.0309Z" fill="url(#paint1_linear_69_78)"/>
+        <defs>
+        <linearGradient id="paint0_linear_69_78" x1="2.61585" y1="-13.0327" x2="42.5465" y2="64.5893" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#D5AC8D"/>
+        <stop offset="0.5" stopColor="#E8C892"/>
+        <stop offset="1" stopColor="#D5AC8D"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_69_78" x1="20.6248" y1="15.3934" x2="33.9073" y2="41.2567" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#D5AC8D"/>
+        <stop offset="0.5" stopColor="#E8C892"/>
+        <stop offset="1" stopColor="#D5AC8D"/>
+        </linearGradient>
+        </defs>
+        </svg>
+        <h3 className=" font-normal text-2xl mb-4">Compartimos este día Juntos</h3>
+        <p>Compartí tus fotos y vídeos de ese hermoso día en #CarlayNico @nanglade @carlasuarez441</p>
+        <div>
+
+            <Logo className=" w-24" />
+
+        </div>
+
+
+        </div>
 
       </section>
     </div>
