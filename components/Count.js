@@ -56,6 +56,6 @@ console.log()
 
 export default function Count(params) {
   return(
-    <Countdown date={'2021-04-30T00:21:00'} renderer={renderer} />
+    <Countdown date={'2022-04-30T00:21:00'} renderer={renderer} />
   )
 };
