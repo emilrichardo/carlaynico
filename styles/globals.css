@@ -13,4 +13,7 @@
 
     @apply scroll-smooth font-sans bg-light text-dark  font-light overflow-x-hidden w-screen;
   }
+  body{
+    @apply overflow-x-hidden;
+  }
 }

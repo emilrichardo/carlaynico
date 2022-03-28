@@ -30,15 +30,24 @@ export default function Invitaction({nombres,personal}) {
 
 
       <section className="h-screen relative  flex flex-col justify-center">
-                    <div className="absolute -right-60 -top-24">
-                    <Image
+                    <div className="absolute -right-60 -top-24 z-0">
+                      <Image
                         src="/hojas01.png"
                         alt="Hoja 01"
                         width={395}
                         height={350}
                         />
-
                     </div>
+                    <div className="absolute -left-20 -bottom-24 z-0">
+                      <Image
+
+                        src="/hojas02.png"
+                        alt="Hoja 01"
+                        width={345}
+                        height={350}
+                        />
+                    </div>
+
 
 
         <div className="text-center ">
@@ -64,7 +73,7 @@ export default function Invitaction({nombres,personal}) {
 
       </section>
 
-      <section className="">
+      <section className="z-10 relative min-h-screen flex flex-col justify-center">
         <div className="text-center">
           <h4 className=" text-2xl font-normal">{nombres}</h4>
           <h5>* Personal ({personal})</h5>
