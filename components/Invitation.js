@@ -92,8 +92,10 @@ export default function Invitaction({nombres,personal}) {
 
             <h5 className=" mt-8 text-2xl font-medium mb-8">30 de abril - 21hs</h5>
             <a href="#confirmarpresencia"><Button className="w-full bg-white mb-4">Confirmar presencia</Button></a>
+            <a target="_blank" rel="noreferrer" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MGU3YzBoY2VvdDNxYTRiZGludjVpN2VxajEgN3Z0ajZkdjZpNWNua25yN2JpbjAxc2gzMDhAZw&tmsrc=7vtj6dv6i5cnknr7bin01sh308%40group.calendar.google.com">
+             <Button className="w-full">Agendar</Button>
+            </a>
 
-            <Button className="w-full">Agendar</Button>
 
           </div>
 
