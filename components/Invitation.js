@@ -256,7 +256,7 @@ export default function Invitaction({nombres,personal}) {
           </div>
         </div>
 
-        <a target="_blank" rel="noreferrer"  href={`https://wa.me/+543854931915?text=${nombres + " (Invitaciones:" + personal + ") "}${confirmar ? " - Confirma su asistencia la fiesta." : "No  podrá asistir a la fiesta."}`}>
+        <a target="_blank" rel="noreferrer"  href={`https://wa.me/+543854931915?text=${personal >= 2 ? "Los invitados " : "El/La invitada "}${nombres + " (Invitaciones:" + personal + ") "}${confirmar ? " - Confirma/n su asistencia la fiesta." : "No podrá/n asistir a la fiesta."}`}>
         <Button className="mt-2">Enviar respuesta</Button>
         </a>
 

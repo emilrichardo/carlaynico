@@ -255,7 +255,7 @@ export default function handler(req, res) {
       },
       {
        "id": 50,
-       "nombres": "Romina y jorge",
+       "nombres": "Romina y Jorge",
        "personal": 2
       },
       {
