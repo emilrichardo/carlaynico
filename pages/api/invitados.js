@@ -185,7 +185,7 @@ export default function handler(req, res) {
       },
       {
        "id": 36,
-       "nombres": "Tamara Coronel",
+       "nombres": "Tamara y Christian",
        "personal": 1
       },
       {
@@ -272,7 +272,13 @@ export default function handler(req, res) {
        "id": 53,
        "nombres": "Santiago Coroleu y Silvina Barcudi",
        "personal": 2
+      },
+      {
+       "id": 54,
+       "nombres": "Yaqueline Juárez",
+       "personal": 1
       }
+
      ]
   )
 }
