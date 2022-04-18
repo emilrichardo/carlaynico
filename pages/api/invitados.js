@@ -277,7 +277,12 @@ export default function handler(req, res) {
        "id": 54,
        "nombres": "Yaqueline Juárez",
        "personal": 1
-      }
+      },
+      {
+        "id": 55,
+        "nombres": "Nicolás y Alejandra",
+        "personal": 2
+       }
 
      ]
   )
