@@ -282,6 +282,11 @@ export default function handler(req, res) {
         "id": 55,
         "nombres": "Nicolás y Alejandra",
         "personal": 2
+       },
+       {
+        "id": 56,
+        "nombres": "David y Débora",
+        "personal": 2
        }
 
      ]

@@ -261,7 +261,7 @@ export default function Invitaction({nombres,personal}) {
         <Button className="mt-2">Enviar respuesta</Button>
         </a>
 
-        <p className="mt-8">Confirmar hasta el 15 de abril.</p>
+
 
 
       </section>
